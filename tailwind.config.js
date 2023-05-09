@@ -7,10 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      background: {
+        'gradient-radial': 'radial-gradient(circle farthest-corner at 7.2% 13.6%, rgba(37,249,245,1) 0%, rgba(8,70,218,1) 90%)',
       },
     },
   },
