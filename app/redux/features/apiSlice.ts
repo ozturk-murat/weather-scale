@@ -3,8 +3,8 @@ import { configureStore } from '@reduxjs/toolkit'
 
 
 const initialState = {
-    key: sessionStorage.getItem('key') ||false
-}
+    key: typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('key') || false : false
+  }
 
 export const apiSlice = createSlice ({
     name: 'api',
