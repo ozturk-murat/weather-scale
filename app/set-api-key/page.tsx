@@ -7,6 +7,9 @@ import { useState } from "react";
 export default function SetApiKey() {
   const router = useRouter();
   const [apiKey, setApiKey] = useState('');
+  const apiKeyValue = sessionStorage.getItem("myApiKey");
+  console.log("sadasd", apiKeyValue);
+  
 
   const handleSubmit = () => {
     sessionStorage.setItem('myApiKey', apiKey);
@@ -21,25 +24,27 @@ export default function SetApiKey() {
           src="/weather-scale.svg"
           alt="Weather Scale Logo"
           width={180}
-          height={37}
+          height={210}
           priority
         />
       </div>
-      <form onSubmit={handleSubmit} className="relative container flex w-full justify-center items-center h-40">
+      <div className="relative container flex w-full justify-center items-center h-40">
         <input
           type="text"
           className="inset-y-0 px-4 py-2 text-center text-2xl rounded-3xl text-gray-600 rounded-r-none w-1/2 h-16 shadow-sm focus:outline-none"
           placeholder="Enter API Key"
+          onChange={(e) => setApiKey(e.target.value)}
         />
         <span className="flex hover:bg-white hover:text-gray-400 hover:transition-colors  items-center h-16 border-white rounded-3xl rounded-l-none border-2 px-3 font-bold text-grey-100">
           <button
+          onClick={handleSubmit}
             type="submit"
             className="hover:bg-gredient-light text-lg font-bold py-3 px-6 rounded"
           >
             Sent
           </button>
         </span>
-      </form>
+      </div>
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
           href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
